@@ -1,0 +1,10 @@
+[package]
+name = "aa2cg"
+version = "0.0.1"
+authors = ["Suguru Kato <salmon.bioinformatics@gmail.com>"]
+
+[dependencies]
+getopts = "0.2.4"
+rustc-serialize = "0.3.22"
+csv = "0.15.0"
+groio = { git = "https://github.com/0ncorhynchus/groio" }
