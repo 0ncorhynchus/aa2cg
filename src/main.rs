@@ -1,6 +1,7 @@
 extern crate getopts;
 extern crate rustc_serialize;
 extern crate csv;
+extern crate biost;
 extern crate groio;
 
 use getopts::Options;
@@ -8,6 +9,7 @@ use std::collections::HashMap;
 use std::fs::File;
 use std::io::Read;
 use std::env;
+use biost::Vector3d;
 use groio::*;
 
 #[derive(RustcDecodable)]
