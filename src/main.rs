@@ -90,7 +90,7 @@ fn main() {
 
     let mut atoms = Vec::new();
     let mut atom_number = 1;
-    for (idx, residue) in input.residues().iter().enumerate() {
+    for residue in input.residues() {
         for (cg, aalist) in aacgmap.iter() {
             let mut total = 0.0_f32;
             let mut position = Vector3d::new(0.0, 0.0, 0.0);
@@ -98,7 +98,7 @@ fn main() {
 
             for &(ref aa, ref mass) in aalist {
                 total += *mass;
-                let coord = residue.get(aa).unwrap();
+                let coord = residue.atoms.get(aa).unwrap();
                 position.x += *mass * coord.position.x;
                 position.y += *mass * coord.position.y;
                 position.z += *mass * coord.position.z;
@@ -115,8 +115,8 @@ fn main() {
             velocity.z /= total;
 
             atoms.push(Atom {
-                res_number: (idx+1) as i32,
-                res_name: "DPPC".to_string(),
+                res_number: residue.number,
+                res_name: residue.name.clone(),
                 atom_name: cg.to_string(),
                 atom_number: atom_number,
                 position: position,

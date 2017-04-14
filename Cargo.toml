@@ -8,4 +8,4 @@ getopts = "0.2.4"
 rustc-serialize = "0.3.22"
 csv = "0.15.0"
 biost = { git = "https://github.com/0ncorhynchus/biost" }
-groio = { git = "https://github.com/0ncorhynchus/groio" }
+groio = { git = "https://github.com/0ncorhynchus/groio", branch = "validation" }
